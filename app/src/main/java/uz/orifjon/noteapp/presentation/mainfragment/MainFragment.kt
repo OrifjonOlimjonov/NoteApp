@@ -37,7 +37,10 @@ class MainFragment : Fragment() {
         adapter = RecyclerViewAdapter()
         binding.recyclerView.adapter = adapter
 
+
         observable()
+
+
 
         return binding.root
     }

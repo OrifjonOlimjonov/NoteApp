@@ -9,6 +9,8 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         app:menu="@menu/menu_toolbar"
+        app:title="Notes"
+        android:background="#77D5FF"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         app:layout_constraintTop_toTopOf="parent" />

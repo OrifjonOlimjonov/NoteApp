@@ -13,7 +13,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainFragmentViewModel @Inject constructor(
-    private val addNoteUseCase: AddNoteUseCase,
     private val getListNotesUseCase: GetListNotesUseCase
 ) : ViewModel() {
 
@@ -22,12 +21,6 @@ class MainFragmentViewModel @Inject constructor(
     init {
         getList()
     }
-    fun addNote(note: Note) {
-        viewModelScope.launch {
-            addNoteUseCase.invoke(note)
-        }
-    }
-
     fun getList() {
         viewModelScope.launch {
             getListNotesUseCase.invoke().onStart {

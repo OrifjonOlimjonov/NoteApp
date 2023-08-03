@@ -2,6 +2,7 @@ package uz.orifjon.noteapp.presentation.mainfragment
 
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,10 +39,8 @@ class MainFragment : Fragment() {
 
         observable()
 
-
         return binding.root
     }
-
 
     private fun observable() {
         viewModel.notes

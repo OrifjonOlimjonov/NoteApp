@@ -12,7 +12,6 @@ class RecyclerViewAdapter : ListAdapter<Note, RecyclerViewAdapter.VH>(MyDiffUtil
 
     inner class VH(var binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(note: Note) {
-            binding.tvName.text = note.name
             binding.tvDescription.text = note.description
         }
     }

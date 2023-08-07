@@ -10,8 +10,6 @@ import java.io.Serializable
 data class Note(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
-    @ColumnInfo(name = "name")
-    val name: String,
     @ColumnInfo(name = "description")
     val description: String
 ) : Serializable

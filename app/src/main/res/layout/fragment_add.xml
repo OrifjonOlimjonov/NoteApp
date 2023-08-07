@@ -12,7 +12,7 @@
         android:layout_height="?actionBarSize"
         android:background="#77D5FF"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_toolbar"
+        app:menu="@menu/menu_check"
         app:title="Notes" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -24,14 +24,6 @@
         app:layout_constraintTop_toBottomOf="@id/toolBar"
         tools:listitem="@layout/color_item" />
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:padding="@dimen/_5sdp"
-        android:hint="note name typing..."
-        android:background="@android:color/transparent"
-        android:layout_height="@dimen/_40sdp"
-        app:layout_constraintTop_toBottomOf="@id/colorPicker" />
 
     <EditText
         android:id="@+id/editTextDescription"
@@ -39,9 +31,9 @@
         android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:gravity="top"
-        android:hint="Type something..."
+        android:hint="@string/type_something"
         android:padding="@dimen/_5sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@id/colorPicker" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

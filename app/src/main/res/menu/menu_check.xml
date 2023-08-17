@@ -7,7 +7,7 @@
         android:title="@string/canceldatabase"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnCheck"
         android:icon="@drawable/check_icon"
         android:title="@string/adddatabase"
         app:showAsAction="ifRoom" />

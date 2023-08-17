@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import uz.orifjon.noteapp.databinding.ColorItemBinding
 
-class ColorPickerAdapter : RecyclerView.Adapter<ColorPickerAdapter.VH>() {
+class ColorPickerAdapter(var itemClick:(String)->Unit): RecyclerView.Adapter<ColorPickerAdapter.VH>() {
 
     inner class VH(var binding: ColorItemBinding) : ViewHolder(binding.root) {
         fun onBind() {
-            binding.cardView.setCardBackgroundColor(Color.parseColor("#FFFFFFF"))
+            binding.cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
+            itemView.setOnClickListener {
+                itemClick("#FFFFFFF")
+            }
         }
     }
 

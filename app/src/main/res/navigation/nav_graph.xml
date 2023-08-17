@@ -9,7 +9,15 @@
         android:id="@+id/mainFragment"
         android:name="uz.orifjon.noteapp.presentation.mainfragment.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addFragment"
+            app:destination="@id/addFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
     <fragment
         android:id="@+id/addFragment"
         android:name="uz.orifjon.noteapp.presentation.addfragment.AddFragment"

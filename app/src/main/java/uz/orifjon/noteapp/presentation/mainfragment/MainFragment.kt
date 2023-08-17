@@ -11,9 +11,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import uz.orifjon.noteapp.R
 import uz.orifjon.noteapp.databinding.FragmentMainBinding
 import uz.orifjon.noteapp.domain.models.Note
 import uz.orifjon.noteapp.presentation.mainfragment.adapters.RecyclerViewAdapter
@@ -35,10 +37,20 @@ class MainFragment : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         adapter = RecyclerViewAdapter()
-        binding.recyclerView.adapter = adapter
+        binding.apply {
+            recyclerView.adapter = adapter
+            toolBar.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.btnAdd-> findNavController().navigate(R.id.action_mainFragment_to_addFragment)
+                }
+                true
+            }
+        }
 
 
         observable()
+
+
 
 
 

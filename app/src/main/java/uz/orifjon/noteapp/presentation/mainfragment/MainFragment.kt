@@ -1,8 +1,6 @@
 package uz.orifjon.noteapp.presentation.mainfragment
 
 import android.os.Bundle
-import android.util.Log
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +15,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import uz.orifjon.noteapp.R
 import uz.orifjon.noteapp.databinding.FragmentMainBinding
-import uz.orifjon.noteapp.domain.models.Note
 import uz.orifjon.noteapp.presentation.mainfragment.adapters.RecyclerViewAdapter
 
 

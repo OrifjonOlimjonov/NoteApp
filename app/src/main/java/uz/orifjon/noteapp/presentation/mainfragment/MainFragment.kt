@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
@@ -34,20 +36,22 @@ class MainFragment : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         adapter = RecyclerViewAdapter()
+        observable()
         binding.apply {
             recyclerView.adapter = adapter
             toolBar.setOnMenuItemClickListener {
-                when(it.itemId){
-                    R.id.btnAdd-> findNavController().navigate(R.id.action_mainFragment_to_addFragment)
+                when (it.itemId) {
+                    R.id.btnAdd -> findNavController().navigate(R.id.action_mainFragment_to_addFragment)
                 }
                 true
             }
         }
 
-
-        observable()
-
-
+        setFragmentResultListener("success_create") { requestKey, bundle ->
+            if (bundle.getBoolean("success_create")) {
+                viewModel.getList()
+            }
+        }
 
 
 
